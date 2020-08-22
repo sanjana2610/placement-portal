@@ -16,7 +16,6 @@ export class UserService {
     {
       const access_token = 'mieuh873wu29i02ij9ohj8$6y8320298j4i';
       return {success: true, access_token};
-      window.location.href = '/home';
     }
     else {
       return {success: false, message: 'Unauthorized login'};

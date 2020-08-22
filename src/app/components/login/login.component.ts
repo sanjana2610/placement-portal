@@ -1,5 +1,5 @@
 /* tslint:disable:typedef */
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import sweetalert from 'sweetalert';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user';
@@ -15,14 +15,14 @@ import {Utils} from '../../helpers/utils';
 export class LoginComponent implements OnInit {
 
   user: User = new User();
-  constructor(private userService: UserService, public router: Router ) {}
 
-  ngOnInit(){
+  constructor(private userService: UserService, public router: Router) {
+  }
+
+  ngOnInit() {
   }
 
   login() {
-    console.log(this.user.name);
-    console.log(this.user.password);
     const res = this.userService.login(this.user);
     if (res.success === true) {
       sessionStorage.setItem('token', res.access_token);

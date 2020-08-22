@@ -1,34 +1,38 @@
 <div style="background-color: #98C1D9">
   <div class="row">
-    <div class="col-2 font-weight-bold" style="margin-left: 10%;margin-top: 30px">Place.io</div>
-    <div class="col-md-2" style="margin-left: 43%; margin-top: 30px">
-      <button class="btn btn-block" (click)="register()" style="border-radius: 12px;background-color: #EE6C4D; color: white">Register</button>
+    <div class="col-2 font-weight-bold" style="margin-left: 10%;margin-top: 3%; color: #293241">Place.io</div>
+    <div class="col-md-2" style="margin-left: 43%; margin-top: 3%">
+      <button class="btn btn-block" (click)="register()"
+              style="border-radius: 12px;background-color: #EE6C4D; color: #E0FBFC">Register
+      </button>
     </div>
   </div>
-    <div class="row">
-      <div class="col-md-4" style="padding-top: 5%">
-        <img src="../../../assets/images/undraw_Profile_data_re_v81r.svg" width="500px" height="500px">
-      </div>
-      <div class="col-md-4">
-        <fieldset style="padding-top: 20%">
-          <h2 class="animation a1" style="padding-left: 160px">Login</h2>
-          <br>
-          <div class="form-group animation a3">
-            <input type="email" [(ngModel)]="user.name" class="form-control input-lg" placeholder="Username">
-          </div>
-          <div class="form-group animation a4">
-            <input type="password" [(ngModel)]="user.password" class="form-control input-lg" placeholder="Password">
-          </div>
-          <a class=" animation a5" style="cursor: pointer; color: black"
-             (click)="router.navigateByUrl('/reset-password')">Forgot
-            Password?</a>
-            <div class="col-md-6" style="margin: 5px 0 5px 100px;">
-              <button (click)="login()" class="btn btn-block" style="border-radius: 12px;background-color: #EE6C4D; color: white">Login</button>
-            </div>
-        </fieldset>
-      </div>
-      <div class="col-md-4" style="padding-top: 12%">
-        <img src="../../../assets/images/undraw_happy_announcement_ac67.svg" width="300px" height="300px">
-      </div>
+  <div class="row">
+    <div class="col-md-4" style="padding-top: 5%">
+      <img src="../../../assets/images/undraw_Profile_data_re_v81r.svg" width="500px" height="500px">
     </div>
+    <div class="col-md-4">
+      <fieldset style="padding-top: 20%">
+        <h2 class="animation a1" style="padding-left: 40%; color: #293241">Login</h2>
+        <br>
+        <div class="form-group animation a3">
+          <input type="email" [(ngModel)]="user.name" class="form-control input-lg" placeholder="Username">
+        </div>
+        <div class="form-group animation a4">
+          <input type="password" [(ngModel)]="user.password" class="form-control input-lg" placeholder="Password">
+        </div>
+        <a class=" animation a5" style="cursor: pointer; color: #293241"
+           (click)="router.navigateByUrl('/reset-password')">Forgot
+          Password?</a>
+        <div class="col-md-6" style="margin: 3% 0 3% 25%;">
+          <button (click)="login()" class="btn btn-block"
+                  style="border-radius: 12px;background-color: #EE6C4D; color: #E0FBFC">Login
+          </button>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-md-4" style="padding-top: 12%">
+      <img src="../../../assets/images/undraw_happy_announcement_ac67.svg" width="300px" height="300px">
+    </div>
+  </div>
 </div>

@@ -58,6 +58,7 @@ export class Utils {
       }
     });
   }
+
   static arrayRemove(arr, value) {
     // console.log(value);
     return arr.filter((ele) => {
