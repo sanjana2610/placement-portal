@@ -1,0 +1,89 @@
+[
+  {
+    "title": "Companies",
+    "links": [
+      {
+        "name": "Jobs",
+        "route": "/home"
+      },
+      {
+        "name": "Companies",
+        "route": "/companies"
+      },
+      {
+        "name": "FAQ",
+        "route": "/faq"
+      }
+    ],
+    "roles": [
+      "student",
+      "admin",
+      "su",
+      "college"
+    ]
+  },{
+  "title": "College Corner",
+  "roles": [
+    "admin",
+    "su",
+    "college"
+  ],
+  "links": [
+    {
+      "name": "Schedule Company",
+      "route": "/schedule-company"
+    },
+    {
+      "name": "Students",
+      "route": "/students"
+    },
+    {
+      "name": "Send Notification",
+      "route": "/email-notification"
+    }
+  ]
+},
+  {
+    "title": "Company Corner",
+    "roles": [
+      "admin",
+      "su",
+      "company"
+    ],
+    "links": [
+      {
+        "name": "Add Job",
+        "route": "/add-job"
+      },
+      {
+        "name": "Students",
+        "route": "/students"
+      },
+      {
+        "name": "Colleges",
+        "route": "/colleges"
+      },
+      {
+        "name": "Send Notification",
+        "route": "/email-notification"
+      }
+    ]
+  },
+  {
+    "title": "Administration",
+    "roles": [
+      "admin",
+      "su"
+    ],
+    "links": [
+      {
+        "name": "Add Company",
+        "route": "/add-company"
+      },
+      {
+        "name": "Add College",
+        "route": "/add-college"
+      }
+    ]
+  }
+]

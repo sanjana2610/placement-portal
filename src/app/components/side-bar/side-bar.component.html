@@ -1,0 +1,21 @@
+<div class="accordion card" id="sidebarAccordion">
+  <div *ngFor="let item of sidebarItems;index as i" class="panel">
+    <div [attr.aria-controls]="'#collapse'+i" [attr.data-target]="'#collapse'+i" [attr.id]="'heading'+i"
+         class="card-header font-weight-bold " data-toggle="collapse" style="cursor: pointer;">
+      <div class="row">
+        <div class="col-10">
+          <p class="mb-0" style="color: #E0FBFC">
+          {{item.title}}
+        </p>
+        </div>
+      </div>
+    </div>
+    <ul [attr.aria-labelledby]="'#heading'+i" [attr.id]="'collapse'+i" class="collapse list-group"
+        data-parent="#sidebarAccordion">
+      <li (click)="navigate(link.route)" *ngFor="let link of item.links" class="list-group-item" style="cursor: pointer;">
+        <a style="color: #3D5A80" >{{link.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+

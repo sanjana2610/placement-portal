@@ -1,0 +1,10 @@
+.accordion {
+  background-color: #3D5A80;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+}
