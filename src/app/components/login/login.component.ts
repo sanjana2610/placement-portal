@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   login() {
     const res = this.userService.login(this.user);
     if (res.success === true) {
-      sessionStorage.setItem('token', res.access_token);
+      sessionStorage.setItem('token', res.accessToken);
       window.location.href = '/home';
     } else {
       sweetalert('Error', Utils.getError(res), 'error');
@@ -34,5 +34,8 @@ export class LoginComponent implements OnInit {
 
   register() {
     this.router.navigateByUrl('/register');
+  }
+  index() {
+    this.router.navigateByUrl('/');
   }
 }

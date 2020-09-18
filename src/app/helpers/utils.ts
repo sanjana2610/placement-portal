@@ -1,7 +1,7 @@
 /* tslint:disable:typedef */
 import {throwError} from 'rxjs';
 import {ValidationErrors} from '@angular/forms';
-import * as moment from 'moment';
+import moment from 'moment';
 import sweetAlert from 'sweetalert';
 
 export class Utils {

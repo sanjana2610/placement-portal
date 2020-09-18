@@ -14,8 +14,8 @@ export class UserService {
   login(user: User) {
     if (user.name === 'sanjana' && user.password === 'sanj')
     {
-      const access_token = 'mieuh873wu29i02ij9ohj8$6y8320298j4i';
-      return {success: true, access_token};
+      const accessToken = 'mieuh873wu29i02ij9ohj8$6y8320298j4i';
+      return {success: true, accessToken};
     }
     else {
       return {success: false, message: 'Unauthorized login'};

@@ -1,1 +1,19 @@
+<app-nav-bar *ngIf="isLoggedIn"></app-nav-bar>
+<div *ngIf="isLoggedIn" class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block sidebar">
+      <app-side-bar></app-side-bar>
+    </nav>
+    <div class="col-md-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <footer class="footer text-center mt-5">
+    <div class="container">
+      <p class="text-muted">
+        &copy; Copyright Place.io </p>
+    </div>
+  </footer>
+</div>
 <router-outlet *ngIf="!isLoggedIn"></router-outlet>
+

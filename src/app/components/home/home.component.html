@@ -1,1 +1,84 @@
-<p>home works!</p>
+<div class="row">
+  <ul class="nav nav-tabs col-md-11">
+    <li class="nav-item">
+      <a (click)="goHome()" style="color: #3D5A80" class="{{ allJobs ? 'nav-link active' : 'nav-link' }}">All jobs</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="myJobs()" style="color: #3D5A80"
+         class="{{ allJobs ? 'nav-link ' : 'nav-link active' }}">Applied Jobs</a>
+    </li>
+  </ul>
+</div>
+<div class="row mt-4">
+  <div class="col-md-11">
+    <table [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-light table-hover medium no-footer"
+           datatable>
+      <thead style="color: #3D5A80">
+      <tr style="color: #3D5A80">
+        <th class="text-center" style="width: 10px;">SNo</th>
+        <th class="text-center">Job Title</th>
+        <th class="text-center">Company</th>
+        <th class="text-center">Location</th>
+        <th class="text-center">CTC</th>
+        <th class="text-center">Actions</th>
+      </tr>
+      </thead>
+      <tbody style="color: #3D5A80">
+      <tr>
+        <td class="text-center" style="width: 10px;">1</td>
+        <td class="text-center">Application developer </td>
+        <td class="text-center">Cerner Corporation</td>
+        <td class="text-center">Bangalore, Mumbai</td>
+        <td class="text-center">6-7 LPA</td>
+        <td class="text-center">
+          <div class="btn-group">
+            <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
+                 title="Appply">
+              Apply
+            </div>
+            <div (click)="companyDetails('Cerner')" class="btn btn-xs btn-dark" title="View user" style="background-color: #EE6C4D; color: #E0FBFC" >
+              Company
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-center" style="width: 10px;">2</td>
+        <td class="text-center">Business manager</td>
+        <td class="text-center">Myntra Corporation</td>
+        <td class="text-center">Bangalore</td>
+        <td class="text-center">12 LPA</td>
+        <td class="text-center">
+          <div class="btn-group">
+            <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
+                 title="Appply">
+              Apply
+            </div>
+            <div (click)="companyDetails('Myntra')" class="btn btn-xs btn-dark" title="View user" style="background-color: #EE6C4D; color: #E0FBFC" >
+              Company
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-center" style="width: 10px;">3</td>
+        <td class="text-center">Web developer</td>
+        <td class="text-center">Neyveli Lignite Corporation</td>
+        <td class="text-center">Hyderabad</td>
+        <td class="text-center">9 LPA</td>
+        <td class="text-center">
+          <div class="btn-group">
+            <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
+                 title="Appply">
+              Apply
+            </div>
+            <div style="background-color: #EE6C4D; color: #E0FBFC" (click)="companyDetails('NLC')" class="btn btn-block" title="View user">
+              Company
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
