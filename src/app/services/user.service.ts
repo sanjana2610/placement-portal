@@ -12,13 +12,10 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
   login(user: User) {
-    if (user.name === 'sanjana' && user.password === 'sanj')
-    {
-      const accessToken = 'mieuh873wu29i02ij9ohj8$6y8320298j4i';
-      return {success: true, accessToken};
-    }
-    else {
-      return {success: false, message: 'Unauthorized login'};
-    }
+    return this.http.get(
+      Config.apiURL + '/login?email='+user.email+'&password='+user.password,
+    ).pipe(
+      catchError(Utils.handleErrors)
+    );
   }
 }

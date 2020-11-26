@@ -19,11 +19,10 @@ export class RegisterComponent implements OnInit {
   }
   register(modelUser: User) {
     const alphaExp = /^[0-9a-zA-Z| ]+$/;
-    const phoneNumber = /^[9/8/9][0-9]*/;
     const email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(modelUser.name && modelUser.name.match(alphaExp)) {
       if(modelUser.password && modelUser.password.length>8) {
-        if(modelUser.mobile.length === 10 && modelUser.mobile.match(phoneNumber)) {
+        if(modelUser.mobile.length === 10) {
           if(modelUser.role) {
             if(modelUser.email && modelUser.email.match(email)) {
               sweetalert('Success', 'Correct data', 'success');

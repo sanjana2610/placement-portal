@@ -23,13 +23,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const res = this.userService.login(this.user);
-    if (res.success === true) {
-      sessionStorage.setItem('token', res.accessToken);
-      window.location.href = '/home';
-    } else {
-      sweetalert('Error', Utils.getError(res), 'error');
-    }
+    this.userService.login(this.user).subscribe(
+      res => {
+        sessionStorage.setItem('token', res['access_token']);
+        window.location.href = '/home';
+      }, err => {
+        sweetalert('Error', Utils.getError(err), 'error');
+      }
+    );
   }
 
   register() {

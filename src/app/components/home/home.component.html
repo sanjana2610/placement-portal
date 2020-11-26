@@ -24,60 +24,24 @@
       </tr>
       </thead>
       <tbody style="color: #3D5A80">
-      <tr>
-        <td class="text-center" style="width: 10px;">1</td>
-        <td class="text-center">Application developer </td>
-        <td class="text-center">Cerner Corporation</td>
-        <td class="text-center">Bangalore, Mumbai</td>
-        <td class="text-center">6-7 LPA</td>
-        <td class="text-center">
-          <div class="btn-group">
-            <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
-                 title="Appply">
-              Apply
+        <tr *ngFor="let job of jobs">
+          <td class="text-center" style="width: 10px;">{{job.job_id}}</td>
+          <td class="text-center">{{job.position}}</td>
+          <td class="text-center">{{job.name}}</td>
+          <td class="text-center">{{job.location}}</td>
+          <td class="text-center">{{job.salary}} LPA</td>
+          <td class="text-center">
+            <div class="btn-group">
+              <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
+                   title="Appply">
+                Apply
+              </div>
+              <div (click)="companyDetails(job.name)" class="btn btn-xs btn-dark" title="View user" style="background-color: #EE6C4D; color: #E0FBFC" >
+                Company
+              </div>
             </div>
-            <div (click)="companyDetails('Cerner')" class="btn btn-xs btn-dark" title="View user" style="background-color: #EE6C4D; color: #E0FBFC" >
-              Company
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="text-center" style="width: 10px;">2</td>
-        <td class="text-center">Business manager</td>
-        <td class="text-center">Myntra Corporation</td>
-        <td class="text-center">Bangalore</td>
-        <td class="text-center">12 LPA</td>
-        <td class="text-center">
-          <div class="btn-group">
-            <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
-                 title="Appply">
-              Apply
-            </div>
-            <div (click)="companyDetails('Myntra')" class="btn btn-xs btn-dark" title="View user" style="background-color: #EE6C4D; color: #E0FBFC" >
-              Company
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="text-center" style="width: 10px;">3</td>
-        <td class="text-center">Web developer</td>
-        <td class="text-center">Neyveli Lignite Corporation</td>
-        <td class="text-center">Hyderabad</td>
-        <td class="text-center">9 LPA</td>
-        <td class="text-center">
-          <div class="btn-group">
-            <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
-                 title="Appply">
-              Apply
-            </div>
-            <div style="background-color: #EE6C4D; color: #E0FBFC" (click)="companyDetails('NLC')" class="btn btn-block" title="View user">
-              Company
-            </div>
-          </div>
-        </td>
-      </tr>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
