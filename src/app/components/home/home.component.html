@@ -20,7 +20,7 @@
         <th class="text-center">Company</th>
         <th class="text-center">Location</th>
         <th class="text-center">CTC</th>
-        <th class="text-center">Actions</th>
+        <th class="text-center" *ngIf="allJobs === true">Actions</th>
       </tr>
       </thead>
       <tbody style="color: #3D5A80">
@@ -30,9 +30,9 @@
           <td class="text-center">{{job.name}}</td>
           <td class="text-center">{{job.location}}</td>
           <td class="text-center">{{job.salary}} LPA</td>
-          <td class="text-center">
+          <td class="text-center" *ngIf="allJobs === true">
             <div class="btn-group">
-              <div class="btn btn-xs btn-success" (click)="apply()" style="background-color: #3D5A80; color: #E0FBFC"
+              <div class="btn btn-xs btn-success" (click)="apply(job.job_id)" style="background-color: #3D5A80; color: #E0FBFC"
                    title="Appply">
                 Apply
               </div>

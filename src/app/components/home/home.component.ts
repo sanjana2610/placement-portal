@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   dtTrigger: Subject<any> = new Subject();
   allJobs = true;
   jobs: Array<Jobs> = [];
+  jobApplying: Jobs = new Jobs();
   constructor(public router: Router, private jobsService: JobsService) { }
   ngAfterViewInit(): void {
     this.dtTrigger.next();
@@ -36,15 +37,30 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   goHome() {
     this.allJobs = true;
-    this.router.navigateByUrl('/home');
+    this.ngOnInit();
   }
   myJobs() {
     this.allJobs = false;
+    this.jobsService.appliedJobs().subscribe(
+      res => {
+        this.jobs = res['jobs'];
+        Utils.rerender(this.dtElement, this.dtTrigger);
+      }, err =>{
+        sweetalert('Error', Utils.getError(err), 'error');
+      }
+    );
   }
   companyDetails(company) {
     this.router.navigateByUrl('/company/?company='+company);
   }
-  apply() {
-    this.router.navigateByUrl('/job');
+  apply(id) {
+    this.jobApplying.job_id=id;
+    this.jobsService.apply(this.jobApplying).subscribe(
+      res => {
+        sweetalert('Success', res['message'], 'success');
+      }, err =>{
+        sweetalert('Error', Utils.getError(err), 'error');
+      }
+    );
   }
 }
